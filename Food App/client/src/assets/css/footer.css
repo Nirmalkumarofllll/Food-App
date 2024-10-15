@@ -1,0 +1,42 @@
+.footer-form{
+    padding: 0;
+    background: transparent;
+}
+.newsletter-input {
+    width: 80%;
+    margin-top: 10px;
+    height: 35px;
+    border: 1px solid #EF4444; 
+    box-sizing: border-box; 
+    border-radius: 5px 0 0 5px;
+    color: #575656;
+    vertical-align: top;
+    padding: 10px;
+}
+.newsletter-input:focus{
+    outline: none;
+}
+
+.newsletter-send {
+    border: none;
+    width: 15%;
+    margin-top: 10px;
+    height: 35px;
+    border-top-left-radius: 0; 
+    border-bottom-left-radius: 0; 
+    display: inline-block;
+    vertical-align: top; 
+    box-sizing: border-box; 
+    margin-left: -4.5px; 
+    border-radius: 0 5px 5px 0;
+    color: white;
+    cursor: pointer;
+    vertical-align: top;
+}
+
+#subscribed-message {
+    display: block;
+    margin-top: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
