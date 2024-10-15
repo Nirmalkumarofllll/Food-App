@@ -8,7 +8,11 @@ const cors = require("cors");
 const app = express();
 
 // Middleware
-app.use(cors({ origin: true }));
+app.use(cors({
+    origin: ["https://nk-food-app.web.app"], // Allow your frontend domain
+    methods: ["GET", "POST", "DELETE", "PUT"], // Specify the methods allowed
+    credentials: true, // If credentials (cookies, authorization) are used
+}));
 app.use(express.json());
 
 admin.initializeApp({
