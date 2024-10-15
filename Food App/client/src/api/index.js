@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const baseURL = "https://food-9ea4l9m33-nirmalkumaroflllls-projects.vercel.app";
+export const baseURL = "https://nightkite-server.vercel.app/";
 export const URL = "https://nk-food-app.web.app";
 
 
