@@ -3,18 +3,20 @@
 
 > ![Loginpage](./imgs/Login.png)
 
-> ![Homepage](https://drive.google.com/file/d/15OIxzzmPPn7fivQKPleUIajp9A0CV1Ft/view?usp=sharing)
+> ![Homepage](./imgs/Home.png)
 
-> ![Servicespage](https://drive.google.com/file/d/12UnpreTg0bscF0Momq6UJjorlPR_WIE6/view?usp=sharing)
+> ![Servicespage](./imgs/services.png)
 
-> ![ContactUspage](https://drive.google.com/file/d/1b8XW6YvQiU_vEUsSC-nSUqiB7U1kVjDB/view?usp=sharing)
+> ![ContactUspage](./imgs/ContactUs.png)
 
-> ![Footer](https://drive.google.com/file/d/1-d8tizUNPfzBb1edTfJ7qnEUq8JupvHm/view?usp=sharing)
+> ![Footer](./imgs/Footer.png)
 
-> ![Dashboard](https://drive.google.com/file/d/1a2BXxCghrXPYVDEl8pW6ntXW0cpQjJAq/view?usp=sharing)
+> ![Dashboard](./imgs/Dashborad.png)
 
-> ![Dashboard_Items](https://drive.google.com/file/d/1JCu88q6bNebDxLEDTF-Vjz5hGQXJKmjz/view?usp=sharing)
+> ![Dashboard_Orders](./imgs/DBOrders.png.png)
 
-> ![Dasboard_NewItems](https://drive.google.com/file/d/1jgNZ3bPDXZ8Za2jUo_hZquUkAaKBzf4D/view?usp=sharing)
+> ![Dashboard_Items](./imgs/DBItems.png)
 
-> ![Dashboard](https://drive.google.com/file/d/1cn7hZw98Z3GZFC_7NzWm-i9AuspOzLPX/view?usp=sharing)
+> ![Dasboard_NewItems](./imgs/DBNew.png)
+
+> ![Dashboard_Users](./imgs/DBUsers.png)
