@@ -1,5 +1,5 @@
 > Fullstack Food App using React js
-> [Check My Portfolio](https://nirmalkumarofllll.github.io/Portfolio/){:target="\_blank"}
+> Check out our portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/){:target="\_blank"}
 
 > Login
 
@@ -29,14 +29,14 @@
 
 > ![Dashboard_Orders](./imgs/DBOrders.png)
 
-> Dashboard_Items
+> Dashboard Items
 
 > ![Dashboard_Items](./imgs/DBItems.png)
 
-> Dasboard_NewItems
+> Dasboard NewItems
 
 > ![Dasboard_NewItems](./imgs/DBNew.png)
 
-> Dashboard_Users
+> Dashboard Users
 
 > ![Dashboard_Users](./imgs/DBUsers.png)
