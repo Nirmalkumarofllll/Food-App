@@ -14,7 +14,7 @@
 
 > ![Homepage](./imgs/Home.png)
 
-> ![Menu](./imgs/menu.png)
+> ![Menu](./imgs/Food_menu.png)
 
 > Our Services
 
