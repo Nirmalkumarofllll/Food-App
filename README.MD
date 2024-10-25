@@ -27,7 +27,7 @@
 
 > Dashboard Orders
 
-> ![Dashboard_Orders](./imgs/DBOrders.png.png)
+> ![Dashboard_Orders](./imgs/DBOrders.png)
 
 > Dashboard_Items
 
