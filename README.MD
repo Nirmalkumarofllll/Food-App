@@ -1,5 +1,5 @@
 > Fullstack Food App using React js
-> Check out our portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/){:target="\_blank"}
+> Check out our portfolio: <a href="https://nirmalkumarofllll.github.io/Portfolio/" target="_blank">Portfolio</a>
 
 > Login
 
