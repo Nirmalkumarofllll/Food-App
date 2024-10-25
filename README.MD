@@ -1,6 +1,6 @@
 > Fullstack Food App
 
-> Check out our portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
+> Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
 > Login
 
