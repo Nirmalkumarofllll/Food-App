@@ -2,7 +2,7 @@ import axios from "axios";
 
 
 export const baseURL = "http://localhost:5001/nk-food-app/us-central1/app";
-export const URL = "https://localhost:3000"
+export const URL = "https://nk-food-app.web.app"
 
 export const validateUserJWTToken = async (token) => {
     try {

@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProducts, getAllUsers } from '../api'; // Fetch both users and products
+import { getAllProducts, getAllUsers } from '../api'; 
 import { setAllProducts } from '../context/actions/productActions';
 import { setAllUserDetails } from '../context/actions/allUserAction';
 import { CChart } from "@coreui/react-chartjs";
 import { FaUser } from "react-icons/fa";
 import { BsBoxes, BsFillBoxSeamFill } from 'react-icons/bs';
 import { IoFastFoodSharp } from "react-icons/io5";
-import { MdMarkEmailRead } from 'react-icons/md';
 import { getAllOrder } from "../api";
 import { setOrders } from "../context/actions/ordersAction";
 

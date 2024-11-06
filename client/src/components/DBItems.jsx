@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import DataTable from './DataTable';
 import { HiCurrencyRupee } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
-import { Tooltip } from '@mui/material';
 import { deleteAProduct, getAllProducts } from '../api';
 import { setAllProducts } from '../context/actions/productActions';
 import {alertSuccess, alertNULL} from '../context/actions/alertActions';
