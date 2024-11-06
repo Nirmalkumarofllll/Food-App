@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-export const baseURL = "https://food-app-psi-orpin.vercel.app/";
+export const baseURL = "https://food-app-psi-orpin.vercel.app";
 export const URL = "https://nk-food-app.web.app"
 
 export const validateUserJWTToken = async (token) => {
