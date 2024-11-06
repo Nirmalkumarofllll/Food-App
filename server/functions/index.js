@@ -2,45 +2,45 @@ const { onRequest } = require("firebase-functions/v2/https");
 const logger = require("firebase-functions/logger");
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
-const express = require("express");
 require('dotenv').config();
-const cors = require("cors");
 
-// Firebase credentials
 const serviceAccountKey = require('./serviceAccountKey.json');
 
-// Initialize Firebase Admin
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccountKey)
-});
-
-// Initialize Express app
+const express = require("express");
 const app = express();
 
-// CORS configuration to allow requests only from your client domain
-const corsOptions = {
-  origin: 'https://nk-food-app.web.app',  // Allow requests only from this domain
-  methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['Authorization', 'Content-Type'],
-};
-
-app.use(cors(corsOptions));  // Apply CORS for all routes
-
-// Body parser middleware for handling JSON data
+// Body parser for our JSON data
 app.use(express.json());
 
-// Define routes
-app.get("/", (req, res) => {
-  return res.send('Hello World');
+// Cross-origin resource sharing (CORS)
+const cors = require("cors");
+app.use(cors({ origin: true }));
+app.use((req, res, next) => {
+    res.set("Access-Control-Allow-Origin", "*");
+    next();
+});
+const cors = require('cors');
+app.use(cors({
+  origin: 'https://nk-food-app.web.app', // Allow only Firebase domain
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
+
+// Firebase credentials
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccountKey)
 });
 
-// Include your API route for users
+// API endpoints
+app.get("/", (req, res) => {
+    return res.send('hello world');
+});
+
+// User routes
 const userRoute = require('./routes/user');
-app.use("/api/users", userRoute);
+app.use("/api/users", userRoute);  
 
-// Include your API route for products
 const productRoute = require("./routes/products");
-app.use("/api/products", productRoute);
+app.use("/api/products/", productRoute);
 
-// Export the app as Firebase Function
+// Export the app
 exports.app = functions.https.onRequest(app);
