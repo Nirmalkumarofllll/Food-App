@@ -4,6 +4,7 @@ import { MdVerified } from 'react-icons/md';
 import "../assets/css/myProfile.css";
 import { Header } from "../components";
 import { Avatar } from '../assets';
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 const MyProfile = () => {
   // Get user details from the Redux store
@@ -12,7 +13,7 @@ const MyProfile = () => {
   // Function to convert UNIX timestamp (auth_time) to readable date
   const convertAuthTime = (authTime) => {
     if (authTime) {
-      const date = new Date(authTime * 1000); // Convert seconds to milliseconds
+      const date = new Date(authTime * 1000); 
       return date.toLocaleDateString("en-US", {
         year: 'numeric',
         month: 'long',
@@ -22,6 +23,20 @@ const MyProfile = () => {
       });
     }
     return 'N/A';
+  };
+
+  // Function to send password reset email
+  const handlePasswordReset = async () => {
+    if (user?.email) {
+      try {
+        const auth = getAuth();
+        await sendPasswordResetEmail(auth, user.email);
+        alert("Password reset email sent! Please check your inbox.");
+      } catch (error) {
+        console.error("Error sending password reset email:", error);
+        alert("Failed to send password reset email.");
+      }
+    }
   };
 
   // If user data is not available, return a loading message or a fallback
@@ -48,10 +63,10 @@ const MyProfile = () => {
             />
           ) : (
             <img 
-            src={Avatar} 
-            alt={Avatar}
-            className="rounded-full w-40 h-40 object-cover shadow-md"
-          />
+              src={Avatar} 
+              alt={Avatar}
+              className="rounded-full w-40 h-40 object-cover shadow-md"
+            />
           )}
         </div>
 
@@ -79,6 +94,16 @@ const MyProfile = () => {
           <p className="text-md text-gray-400">
             Last authenticated on: {convertAuthTime(user?.auth_time)}
           </p>
+
+          {/* Reset Password Button for Unverified Users */}
+          {!user?.email_verified && (
+            <button
+              onClick={handlePasswordReset}
+              className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+            >
+              Reset Password
+            </button>
+          )}
         </div>
       </div>
     </div>

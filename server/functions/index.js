@@ -4,7 +4,7 @@ const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 require('dotenv').config();
 
-const serviceAccountKey = require('./serviceAccountKey.json'); // Ensure this is securely managed
+const serviceAccountKey = require('./serviceAccountKey.json');
 
 const express = require("express");
 const app = express();
@@ -14,10 +14,11 @@ app.use(express.json());
 
 // Cross-origin resource sharing (CORS)
 const cors = require("cors");
-app.use(cors({
-  origin: 'https://nk-food-app.web.app', // Allow only Firebase domain
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-}));
+app.use(cors({ origin: true }));
+app.use((req, res, next) => {
+    res.set("Access-Control-Allow-Origin", "*");
+    next();
+});
 
 // Firebase credentials
 admin.initializeApp({
@@ -33,7 +34,6 @@ app.get("/", (req, res) => {
 const userRoute = require('./routes/user');
 app.use("/api/users", userRoute);  
 
-// Product routes
 const productRoute = require("./routes/products");
 app.use("/api/products/", productRoute);
 

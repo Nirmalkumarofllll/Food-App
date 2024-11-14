@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, sendPasswordResetEmail, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { app } from '../config/firebase.config';
 import { validateUserJWTToken } from '../api';
 import { FoodLogo, Logo } from "../assets";
@@ -8,7 +8,7 @@ import '../assets/css/logins.css';
 import { useNavigate } from "react-router-dom";
 import { setUserDetails } from '../context/actions/userActions';
 import { useDispatch, useSelector } from 'react-redux';
-import { alertInfo, alertNULL, alertWarning } from '../context/actions/alertActions';
+import { alertInfo, alertNULL, alertSuccess, alertWarning } from '../context/actions/alertActions';
 import { motion } from 'framer-motion';
 import { FaArrowLeft } from "react-icons/fa";
 
@@ -32,6 +32,39 @@ const Login = () => {
   
   const [showSignInForm, setShowSignInForm] = useState(false);
   const [showSignUpForm, setShowSignUpForm] = useState(false);
+
+  const handleForgotPassword = async () => {
+    let email = userEmail;
+  
+    // If email is not entered in the form, prompt the user to enter it
+    if (!email) {
+      email = window.prompt("Please enter your email address for password reset:");
+      if (!email) {
+        dispatch(alertWarning("Email is required to reset password."));
+        setTimeout(() => {
+          dispatch(alertNULL());
+        }, 3000);
+        return;
+      }
+    }
+  
+    try {
+      await sendPasswordResetEmail(firebaseAuth, email);
+      dispatch(alertSuccess("Password reset email sent! Check your inbox."));
+    } catch (error) {
+      if (error.code === "auth/user-not-found") {
+        dispatch(alertWarning("No user found with this email."));
+      } else if (error.code === "auth/invalid-email") {
+        dispatch(alertWarning("Enter a valid email address."));
+      } else {
+        dispatch(alertWarning("Failed to send password reset email. Please try again."));
+      }
+    } finally {
+      setTimeout(() => {
+        dispatch(alertNULL());
+      }, 3000);
+    }
+  };
 
   const mobileSignIn = () => {
     setShowSignUpForm(false); // Ensure the Sign Up form is hidden
@@ -186,7 +219,7 @@ const Login = () => {
   return (
     <>
 {isMobile ? (
-  <div className="fixed top-0 w-screen bg-zinc-900 backdrop-blur-md shadow-md h-screen gap-0 flex flex-col items-center justify-start">
+  <div className="fixed overflow-y-auto top-0 w-screen bg-zinc-900 backdrop-blur-md shadow-md h-screen gap-0 flex flex-col items-center justify-start">
         <img src={FoodLogo} alt="Logo" className='h-[200px] w-[200px] animate-pulse -m-2' />
         <p className='text-primary text-xl'>Unleash Your Inner <span className='text-red-500 text-xl'>Foodie</span></p>
 
@@ -241,10 +274,11 @@ const Login = () => {
               required
             />
             <button onClick={signInWithEmailpass}   className="sign flex items-center justify-center p-3" type="button">Sign In</button>
-            
+            <a href="#" onClick={(e) => { e.preventDefault(); handleForgotPassword(); }} className="m-0 text-primary text-md forgot-password-link"> Forgot your password? </a>
+
             {/* Back Button */}
             <button
-              className="pt-3 pb-3 mt-5 pl-10 pr-10 text-primary flex gap-3 justify-center items-center"
+              className="pt-3 pb-3 mt-0 pl-10 pr-10 text-primary flex gap-3 justify-center items-center"
               onClick={() => { setShowSignInForm(false); setShowSignUpForm(false); }}
               type="button"
             >
@@ -361,7 +395,7 @@ const Login = () => {
                 placeholder="Password"
                 required
               />
-              <a href="#">Forgot your password?</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); handleForgotPassword(); }} className="forgot-password-link"> Forgot your password? </a>
               <button onClick={signInWithEmailpass} className="sign rounded-full" type="button">Sign In</button>
             </form>
           </div>

@@ -50,7 +50,7 @@ const Cart = () => {
                 // Handle success
                 console.log(response);
                 // Optionally redirect to success URL
-                window.location.href = `http://localhost:3000/checkout-success`;
+                window.location.href = `${URL}/checkout-success`;
               },
               prefill: {
                 name: user.name,
