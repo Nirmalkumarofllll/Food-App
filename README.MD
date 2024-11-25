@@ -10,6 +10,12 @@
 
 > ![Homepage](./imgs/Home.png)
 
+> ![Homepage2](./imgs/Homepage.png)
+
+> Orders
+
+> ![Orderspage](./imgs/Orders.png)
+
 > Our Services
 
 > ![Servicespage](./imgs/services.png)
@@ -24,7 +30,7 @@
 
 > Dashboard Home
 
-> ![Dashboard](./imgs/Dashborad.png)
+> ![Dashboard](./imgs/Dashboard.png)
 
 > Dashboard Orders
 
