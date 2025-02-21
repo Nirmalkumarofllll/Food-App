@@ -1,49 +1,49 @@
-> Fullstack Food App
+<h1 align="center">Fullstack Food Web App</h1>
 
 > Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
-> Login
+## Login
 
-> ![Loginpage](./imgs/Login.png)
+![Loginpage](./imgs/Login.png)
 
-> Home
+## Home
 
-> ![Homepage](./imgs/Home.png)
+![Homepage](./imgs/Home.png)
 
-> ![Homepage2](./imgs/Homepage.png)
+![Homepage2](./imgs/Homepage.png)
 
-> Orders
+## Orders
 
-> ![Orderspage](./imgs/Orders.png)
+![Orderspage](./imgs/Orders.png)
 
-> Our Services
+## Our Services
 
-> ![Servicespage](./imgs/services.png)
+![Servicespage](./imgs/services.png)
 
-> Contact Us
+## Contact Us
 
-> ![ContactUspage](./imgs/ContactUs.png)
+![ContactUspage](./imgs/ContactUs.png)
 
-> Footer
+## Footer
 
-> ![Footer](./imgs/Footer.png)
+![Footer](./imgs/Footer.png)
 
-> Dashboard Home
+## Dashboard Home
 
-> ![Dashboard](./imgs/Dashboard.png)
+![Dashboard](./imgs/Dashboard.png)
 
-> Dashboard Orders
+## Dashboard Orders
 
-> ![Dashboard_Orders](./imgs/DBOrders.png)
+![Dashboard_Orders](./imgs/DBOrders.png)
 
-> Dashboard Items
+## Dashboard Items
 
-> ![Dashboard_Items](./imgs/DBItems.png)
+![Dashboard_Items](./imgs/DBItems.png)
 
-> Dasboard NewItems
+## Dasboard NewItems
 
-> ![Dasboard_NewItems](./imgs/DBNew.png)
+![Dasboard_NewItems](./imgs/DBNew.png)
 
-> Dashboard Users
+## Dashboard Users
 
-> ![Dashboard_Users](./imgs/DBUsers.png)
+![Dashboard_Users](./imgs/DBUsers.png)
