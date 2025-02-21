@@ -1,6 +1,6 @@
 <h1 align="center">Fullstack Food Web App</h1>
 
-> Check out My portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
+> Check out my portfolio: [Portfolio](https://nirmalkumarofllll.github.io/Portfolio/)
 
 ## Login
 
@@ -72,3 +72,5 @@ This page offers multi-functional gateway for user authentication, featuring an 
 <p align="justify">The primary focus is on building a user management interface that integrates with a backend API to fetch user data and present it in a visually structured format. The project utilizes React alongside Redux for state management, allowing for efficient data flow and UI updates. The component leverages the useEffect hook to initiate data retrieval upon the component's mount. It checks if the allUsers state is either empty or undefined. If so, it invokes the getAllUsers function from the API, which retrieves the user data. The results are then dispatched to the Redux store using the setAllUserDetails action. This approach ensures that user data is only fetched when necessary, optimizing performance by preventing unnecessary API calls. A key feature of the interface is the DataTable component, which is designed to display user information in a structured manner. The table includes several columns: an image of the user, their display name, email address, and a verification status indicator. Each column is configured with a title and a corresponding field, utilizing the render function for custom rendering of complex data types. For instance, the user image displays either the URL provided or a default avatar if the URL is missing. The verification status is presented as a colored badge that visually distinguishes between verified and non-verified users. To enhance the user experience, the table also includes some conditional rendering. For instance, when displaying the verification status, a color-coded badge indicates whether the user's email is verified or not. This adds an immediate visual cue for users managing the data. In terms of data handling, the application ensures that it maintains the integrity and accessibility of user information. The use of Redux allows for centralized state management, making it easier to share the user data across different components if needed. Additionally, the layout employs flexbox for responsive design, ensuring that the table is visually appealing and functional across various screen sizes. </p>
 
 ![Dashboard_Users](./imgs/DBUsers.png)
+
+> Learn how to do this project: [Project](https://nirmalkumarofllll.github.io/Portfolio/Foodapp.html)
